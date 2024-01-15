@@ -1,0 +1,301 @@
+row_number,employee_id,first_name,last_name,job_title,withheld_401
+1,1,Flin,Hallsworth,developer 3,3.38
+0,2,Joscelin,Heak,developer 1,3.98
+3,3,Dorelia,Demangeon,sales,1.1
+4,4,Annemarie,Gillam,contractors,3.8
+5,5,Corette,Moatt,sales,2.28
+6,6,Richmound,Merkle,contractors,3.21
+7,7,Faulkner,O'Skehan,chairman,1.71
+8,8,Phylys,Tampen,business analyst,2.75
+9,9,Shari,Pabst,contractors,2.32
+10,10,Ross,Mathieson,developer 2,1.82
+11,11,Powell,Brockington,sales,2.86
+12,12,Yvette,Niche,contractors,1.05
+13,13,Lloyd,Hughesdon,sales,1.45
+14,14,Farrah,Tonge,sales,0.26
+15,15,Nester,Bolderoe,technical writer,2.71
+16,16,Ulick,Tabor,developer 2,2.31
+17,17,Orion,Umney,developer 2,0.79
+18,18,Bernita,Shervington,contractors,3.69
+19,19,Augusto,Kehir,business analyst,1.43
+20,20,Cathrin,Lippo,developer 3,2.63
+21,21,Lucia,McKniely,sales,2.93
+22,22,Kendell,Rubie,business analyst,2.26
+23,23,Kristel,Troy,business analyst,0.09
+24,24,Brandy,Scholtz,developer 1,0.87
+25,25,Kyle,Morton,business analyst,2.23
+26,26,Pia,McClure,business analyst,2.33
+27,27,Mathew,Leathley,developer 1,1.1
+28,28,Horten,Goncaves,contractors,0.79
+29,29,Ado,Jozwiak,developer 2,3.53
+30,30,Rowena,Dockerty,business analyst,3.02
+31,31,Loreen,Alti,business analyst,2.6
+32,32,Boniface,Bromehead,developer 3,3.92
+33,33,Hiram,Wallas,sales,2.05
+34,34,Theo,Jarvie,developer 2,2.5
+35,35,Graig,Oakley,contractors,3.77
+36,36,Jemimah,Bygate,technical writer,3.67
+37,37,Laney,Beekman,chairman,3.23
+38,38,Rey,Vobes,sales,1.42
+39,39,Elnora,Hastie,technical writer,1.97
+40,40,Maxi,Semered,developer 1,0.3
+41,41,Sioux,Wayland,chairman,0.99
+42,42,Iain,Escala,business analyst,3.63
+43,43,Barron,Thunders,chairman,0.82
+44,44,Cherie,Rustman,developer 2,1.46
+45,45,Samara,Bransden,business analyst,3.46
+46,46,Slade,Gregan,contractors,3.71
+47,47,Nariko,Selbach,chairman,2.66
+48,48,Anthiathia,Sturte,chairman,2.89
+49,49,Cynthia,Jacqueminet,developer 1,1.34
+50,50,Budd,Choppin,developer 2,0.61
+51,51,Edsel,Khan,developer 3,2.61
+52,52,Sanderson,Van Dale,business analyst,1.1
+53,53,Werner,Reschke,technical writer,2.37
+54,54,Easter,Struss,contractors,1.84
+55,55,Jarrad,Melin,contractors,2.33
+56,56,Shae,McLeese,sales,2.49
+57,57,Deana,Wrates,developer 1,1.31
+58,58,Allan,Klamman,technical writer,3.84
+59,59,Tabbi,Premble,contractors,0.77
+60,60,Heath,Celand,developer 1,2.02
+61,61,Ketty,Marages,developer 3,0.44
+62,62,Durward,Donahue,business analyst,3.39
+63,63,Janetta,Sharpus,chairman,1.43
+64,64,Hendrick,O'Luney,developer 2,3.53
+65,65,Lauren,Jubb,chairman,0.17
+66,66,Caspar,Olensby,business analyst,3.09
+67,67,Mel,Rutter,technical writer,1.41
+68,68,Lynnell,Gidney,developer 2,0.83
+69,69,Amanda,Lingner,sales,1.53
+70,70,Gui,Ramey,developer 2,0.35
+71,71,Erminie,Forryan,chairman,0.33
+72,72,Dwight,Castillon,developer 3,0.67
+73,73,Tynan,De L'Isle,contractors,2.53
+74,74,Shane,Skipworth,contractors,1.52
+75,75,Ulick,Gioan,chairman,2.74
+76,76,Courtenay,Grigoroni,technical writer,0.58
+77,77,Troy,Enrrico,contractors,1.04
+78,78,Josie,Attrey,technical writer,1.57
+79,79,Land,O'Towey,developer 2,2.29
+80,80,Oralie,Vannuccinii,chairman,0.67
+81,81,Sanderson,Janosevic,developer 2,0.79
+82,82,Dollie,Bosenworth,chairman,0.98
+83,83,Effie,Whorlton,developer 1,0.68
+84,84,Wittie,Vince,business analyst,0.33
+85,85,Sid,McGrayle,developer 1,1.63
+86,86,Luisa,Kment,sales,1.15
+87,87,Georgianne,Rush,contractors,3.03
+88,88,Cheryl,Plessing,chairman,3.94
+89,89,Jephthah,Moakler,technical writer,3.11
+90,90,Prudi,Byrom,developer 2,1.04
+91,91,Dennison,Bedow,developer 2,0.31
+92,92,Gay,Scudders,developer 3,1.15
+93,93,Elisabet,Sugden,technical writer,3.11
+94,94,Sauncho,O'Cassidy,chairman,2.57
+95,95,Florinda,Osmund,business analyst,2.24
+96,96,Lois,Perocci,chairman,2.59
+97,97,Warner,Coveley,chairman,1.02
+98,98,Irv,Brugsma,chairman,3.2
+99,99,Etienne,MacManus,technical writer,2.03
+100,100,Bay,Roycraft,developer 1,2.63
+101,101,Kalli,Howitt,sales,0.75
+102,102,Constantine,Ryall,business analyst,1.73
+103,103,Hewet,Bergen,technical writer,1.42
+104,104,Lorry,MacIlwrick,contractors,0.08
+105,105,Arney,Birtwhistle,developer 3,1.5
+106,106,Tris,Lipscomb,developer 2,0.62
+107,107,Boniface,Spoward,technical writer,0.98
+108,108,Gregg,Gegg,developer 2,2.06
+109,109,Conrad,Stainton - Skinn,business analyst,2.05
+110,110,Ingar,Kervin,technical writer,2.77
+111,111,Carrissa,Bensusan,business analyst,0.88
+112,112,Collette,Cawsey,business analyst,2.85
+113,113,Rina,Scandrett,developer 3,0.92
+114,114,Mack,Irvine,contractors,2.39
+115,115,Markos,Tumber,chairman,0.42
+116,116,Neill,Mogey,sales,3.34
+117,117,Judye,Meacher,developer 1,3.05
+118,118,Chelsea,Rudgard,developer 1,1.85
+119,119,Clevie,Arnault,business analyst,0.73
+120,120,Raphael,Byk,chairman,1.39
+121,121,Mikael,Acock,business analyst,0.33
+122,122,Cointon,Bayless,technical writer,1.67
+123,123,Antoine,Ginnane,developer 2,2.46
+124,124,Robbie,Woodthorpe,business analyst,1.84
+125,125,Perrine,Mottershead,developer 2,2.53
+126,126,Anetta,Crosland,developer 3,2.68
+127,127,Grove,Carvell,chairman,3.23
+128,128,Krystal,Disbrey,developer 1,0.08
+129,129,Ashlee,Clapson,developer 2,0.18
+130,130,Aurthur,Stanlack,developer 3,0.24
+131,131,Vinnie,Seton,developer 1,1.46
+132,132,Clarinda,Bullcock,chairman,3.43
+133,133,Junina,Grivori,sales,0.67
+134,134,Gaven,Allbut,chairman,3.79
+135,135,Juliet,Jiruca,technical writer,1.63
+136,136,Joyan,Hobbert,business analyst,1.11
+137,137,Phoebe,Wassell,technical writer,1.09
+138,138,Emlynne,Lever,sales,3.07
+139,139,Oriana,Jellybrand,technical writer,3.17
+140,140,Melosa,Castagnet,developer 2,2.21
+141,141,Louie,Dallan,technical writer,1.93
+142,142,Delcina,McKilroe,developer 2,2.13
+143,143,Chester,Mixture,contractors,1.42
+144,144,Moishe,Iacovini,business analyst,1.1
+145,145,Eadmund,Gheeraert,developer 2,1.25
+146,146,Elliott,Greenshiels,chairman,0.96
+147,147,Alaster,Hobgen,contractors,2.13
+148,148,Darell,Lardnar,contractors,1.27
+149,149,Taite,Moulsdall,developer 2,3.3
+150,150,Sunny,Winmill,sales,0.01
+151,151,Vicki,McBain,developer 1,2.46
+152,152,Bernard,Grioli,contractors,3.25
+153,153,Ann,Rickertsen,sales,1.93
+154,154,Alfonse,Lemonnier,business analyst,3.11
+155,155,Everett,Miskelly,business analyst,2.09
+156,156,Trisha,Kringe,sales,2.27
+157,157,Pennie,MacKeeg,developer 2,2.99
+158,158,Byrom,Savory,developer 1,2.22
+159,159,Donia,Laydel,contractors,3.23
+160,160,Billye,Dutchburn,developer 2,2.97
+161,161,Lavina,Calveley,developer 2,2.85
+162,162,Der,Stenett,developer 3,0.74
+163,163,Karlotta,Harfoot,chairman,3.32
+164,164,Neila,Harriskine,technical writer,1.28
+165,165,Ernestus,Burnham,developer 3,0.74
+166,166,Keri,Sweetsur,business analyst,1.75
+167,167,Kendall,Fardy,developer 2,1.06
+168,168,Myer,Cornford,developer 3,2.82
+169,169,Simonne,Eich,contractors,2.71
+170,170,Dulcine,O'Neill,developer 1,2.96
+171,171,Sandy,Longhorne,chairman,2.04
+172,172,Liane,Watmore,technical writer,1.58
+173,173,Dalia,Upchurch,developer 2,1.22
+174,174,Jacklin,Izhak,developer 3,3.9
+175,175,Bernadette,McNea,developer 1,1.97
+176,176,Sindee,Beecroft,developer 3,1.79
+177,177,Terry,Dunstan,developer 2,1.41
+178,178,Munroe,Mostyn,developer 2,0.42
+179,179,Boigie,Braunfeld,developer 2,2.89
+180,180,Gabrila,Novotni,developer 3,1.78
+181,181,Titos,Ricardo,developer 1,3.71
+182,182,Ham,Skeene,technical writer,2.84
+183,183,Friedrich,Lagneaux,sales,3.97
+184,184,Garald,Blueman,chairman,2.07
+185,185,Amalita,Dowdam,contractors,0.37
+186,186,Chandra,Warwick,contractors,2.5
+187,187,Tate,Offill,technical writer,1.42
+188,188,Jilleen,Kasting,sales,1.34
+189,189,Viv,Couthard,contractors,1.64
+190,190,Etan,Bourget,contractors,2.49
+191,191,Auroora,Cassy,developer 3,3.34
+192,192,Derward,Yerrill,sales,1.32
+193,193,Russ,Iashvili,chairman,1.4
+194,194,Fraze,Kieran,developer 1,1.47
+195,195,Cymbre,Kirvell,chairman,1.43
+196,196,Tito,Vasey,contractors,2.99
+197,197,Jon,Lipyeat,developer 2,2.35
+198,198,Lesya,Ord,developer 3,0.36
+199,199,Kaitlin,Minter,contractors,2.13
+200,200,Fields,Samson,developer 2,3.52
+201,201,Erasmus,McCrohon,technical writer,0.18
+202,202,Allister,Hedan,chairman,0.76
+203,203,Jorie,Dain,technical writer,3.53
+204,204,Lilas,Melmore,developer 3,1.99
+205,205,Mikol,Harcarse,chairman,3.24
+206,206,Simmonds,Maginn,chairman,2.04
+207,207,Luke,Kilian,technical writer,0.64
+208,208,Pebrook,Gabbidon,developer 3,2.95
+209,209,Gardner,Copcutt,developer 2,2.4
+210,210,Belle,Savatier,sales,2.22
+211,211,Nyssa,Denisevich,business analyst,2.89
+212,212,Gussie,Aubrun,developer 3,3.26
+213,213,Izak,Barnet,developer 2,3.66
+214,214,Woodie,Sayes,technical writer,3.0
+215,215,Peter,Deares,developer 2,0.28
+216,216,Cookie,Greensted,business analyst,0.39
+217,217,Goldarina,Degli Antoni,technical writer,1.7
+218,218,Christy,Darkin,business analyst,2.91
+219,219,Merridie,Pirouet,sales,3.7
+220,220,Sile,Clunan,developer 3,1.84
+221,221,Anneliese,Samweyes,business analyst,1.46
+222,222,Denny,Woolaston,business analyst,1.97
+223,223,Orv,Wright,contractors,2.45
+224,224,Gavra,Deerness,chairman,3.04
+225,225,Ethelind,Gouda,business analyst,3.8
+226,226,Bobine,Frost,technical writer,2.82
+227,227,Elden,Frail,chairman,0.52
+228,228,Reagan,Mowne,chairman,0.92
+229,229,Jackie,Woodhall,business analyst,2.48
+230,230,Christie,Camoletto,technical writer,3.49
+231,231,Yetta,Stean,sales,0.55
+232,232,Bartram,Reinbech,technical writer,3.3
+233,233,Leo,Littler,developer 3,0.46
+234,234,Lonnie,Cominello,business analyst,3.55
+235,235,Marilin,Keggins,contractors,2.88
+236,236,Hobart,Howsley,developer 3,0.9
+237,237,Lavena,Ledes,developer 3,1.44
+238,238,Laetitia,Philcock,contractors,2.44
+239,239,Ida,Cristofaro,contractors,2.31
+240,240,Joshua,Edworthy,developer 2,1.99
+241,241,Kaine,Sievewright,chairman,0.22
+242,242,Jack,Cobbin,technical writer,0.39
+243,243,Vincenz,Edinborough,sales,2.68
+244,244,Arlen,Southcoat,developer 2,2.2
+245,245,Raychel,Walklett,developer 2,3.5
+246,246,Clari,Perassi,chairman,0.94
+247,247,Joby,Gouldthorpe,sales,3.13
+248,248,Shina,Bartalini,sales,2.2
+249,249,Pia,Arden,developer 2,0.05
+250,250,Haslett,Collecott,technical writer,1.03
+251,251,Kalil,Bullcock,developer 2,3.0
+252,252,Gregory,Pattle,technical writer,2.46
+253,253,Jon,Jerram,business analyst,2.72
+254,254,Filmer,Raxworthy,chairman,0.63
+255,255,Francisca,Gaddie,chairman,0.41
+256,256,Legra,Lambird,developer 2,0.24
+257,257,Worth,Bernet,contractors,1.33
+258,258,Eddie,Gewer,chairman,1.89
+259,259,Yasmeen,Romanelli,developer 3,2.35
+260,260,Marice,Orrice,developer 1,3.13
+261,261,Karon,Pontefract,developer 1,0.37
+262,262,Janette,Tooze,developer 3,3.37
+263,263,Britney,Campbell-Dunlop,developer 3,0.53
+264,264,Philbert,Ginnety,sales,1.2
+265,265,Rhiamon,Seakes,contractors,0.23
+266,266,Perceval,Lovewell,chairman,2.39
+267,267,Christal,Avrahamof,developer 3,1.81
+268,268,Horten,Gounel,sales,0.55
+269,269,Abbot,Bartozzi,chairman,3.49
+270,270,Merrie,Batsford,contractors,0.81
+271,271,Anya,Chree,developer 1,2.07
+272,272,Chad,Stratten,sales,3.88
+273,273,Andras,Dilawey,developer 2,3.05
+274,274,Flory,Pipkin,sales,3.52
+275,275,Herc,Hemmingway,business analyst,2.94
+276,276,Gwenni,Klossmann,contractors,1.2
+277,277,Lavinie,Keher,sales,0.91
+278,278,Eyde,Korf,contractors,0.21
+279,279,Gunar,Lawling,contractors,1.15
+280,280,Tabbie,Antoniat,sales,0.17
+281,281,Maris,Quainton,chairman,1.78
+282,282,Wynnie,Harp,chairman,1.11
+283,283,Felic,Zemler,developer 2,1.28
+284,284,Sandie,Candlin,sales,3.27
+285,285,Inglis,Charters,developer 2,2.98
+286,286,Al,Guard,sales,1.01
+287,287,Dave,De la Harpe,sales,3.42
+288,288,Tuckie,Cridge,developer 1,3.8
+289,289,Daisy,Swanbourne,contractors,2.32
+290,290,Olwen,Cathcart,chairman,3.39
+291,291,Terri,Banger,business analyst,1.87
+292,292,Robby,Kinder,business analyst,0.35
+293,293,Kayla,Attawell,developer 3,0.34
+294,294,Susan,Scutts,developer 2,2.52
+295,295,Sarita,McGunley,contractors,3.05
+296,296,Sianna,Bromehed,contractors,1.87
+297,297,Somerset,Kyncl,sales,2.06
+298,298,Elly,Vesque,developer 3,0.78
+299,299,Timmy,Dallaway,contractors,1.71
+300,300,Cathryn,Rumney,chairman,0.67
