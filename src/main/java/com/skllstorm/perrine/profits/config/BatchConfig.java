@@ -1,6 +1,8 @@
 package com.skllstorm.perrine.profits.config;
 
+import com.skllstorm.perrine.profits.listener.EmployeeToDbSkipListener;
 import com.skllstorm.perrine.profits.model.Employee;
+import com.skllstorm.perrine.profits.process.EmployeeProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -14,6 +16,7 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.data.MongoItemWriter;
 import org.springframework.batch.item.data.builder.MongoItemWriterBuilder;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.FlatFileParseException;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
@@ -59,6 +62,11 @@ public class BatchConfig {
     }
 
     @Bean
+    public ItemProcessor<Employee, Employee> employeeProcessor(){
+        return new EmployeeProcessor();
+    }
+
+    @Bean
     public MongoItemWriter<Employee> writeEmployeeToMongo() {
         return new MongoItemWriterBuilder<Employee>()
                 .template(template)
@@ -67,11 +75,18 @@ public class BatchConfig {
     }
 
     @Bean
-    public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+    public Step step1(JobRepository jobRepository,
+                      PlatformTransactionManager transactionManager
+                      ) {
         return new StepBuilder("step1", jobRepository)
                 .<Employee, Employee>chunk(10, transactionManager)
                 .reader(readFromCsv())
+                .processor(employeeProcessor())
                 .writer(writeEmployeeToMongo())
+                .faultTolerant()
+                .skipLimit(10)
+                .skip(FlatFileParseException.class)
+                .listener(new EmployeeToDbSkipListener("fails.psv"))
                 .build();
     }
 
