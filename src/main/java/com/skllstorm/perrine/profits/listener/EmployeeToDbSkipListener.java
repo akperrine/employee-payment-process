@@ -30,7 +30,7 @@ public class EmployeeToDbSkipListener implements SkipListener<Employee, Employee
                 Files.writeString(this.skippedItemsFile, skippedLine, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             }
             catch (IOException e) {
-
+                throw new RuntimeException("Unable to write file " + skippedLine);
             }
         }
     }
