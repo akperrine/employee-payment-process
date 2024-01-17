@@ -9,6 +9,7 @@ import org.springframework.batch.item.ItemProcessor;
 
 @Slf4j
 public class PaymentProcessor implements ItemProcessor<Employee, EmployeePayment> {
+    // calc process that creates an EmployeePayment class and calcs the income and witholdiing
     @Override
     public EmployeePayment process(Employee item) throws Exception {
         log.info("Logging item user {}", item.getLastName());

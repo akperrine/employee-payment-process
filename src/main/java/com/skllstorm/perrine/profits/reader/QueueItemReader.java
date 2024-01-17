@@ -22,11 +22,6 @@ public class QueueItemReader<T> implements ItemReader<T> {
         T item = itemQueue.poll();
         log.info("READING queue of size: {}, item: {}", itemQueue.size(), item);
         return item;
-//        if (item != null) {
-//            return item;
-//        } else {
-//            return null;
-//        }
     }
 
 }

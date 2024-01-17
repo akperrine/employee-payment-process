@@ -15,6 +15,7 @@ public class EmployeeToDbSkipListener implements SkipListener<Employee, Employee
 
     Path skippedItemsFile;
 
+    //Listener will write to file if comes across a FlatFileParseException
     public EmployeeToDbSkipListener(String skippedItemsFile) {
         this.skippedItemsFile = Paths.get(skippedItemsFile);
     }

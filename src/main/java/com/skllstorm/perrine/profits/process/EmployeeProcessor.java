@@ -6,6 +6,7 @@ import org.springframework.batch.item.ItemProcessor;
 
 @Slf4j
 public class EmployeeProcessor implements ItemProcessor<Employee, Employee> {
+    //Simple filter process
     @Override
     public Employee process(Employee item) throws Exception {
         if (item.getJobTitle().equals("contractors") || item.getJobTitle().equals("chairman")) {
