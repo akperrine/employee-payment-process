@@ -5,6 +5,9 @@ import com.skllstorm.perrine.profits.model.Employee;
 import com.skllstorm.perrine.profits.model.EmployeePayment;
 import com.skllstorm.perrine.profits.process.EmployeeProcessor;
 import com.skllstorm.perrine.profits.process.PaymentProcessor;
+import com.skllstorm.perrine.profits.reader.QueueItemReader;
+import com.skllstorm.perrine.profits.service.ItemQueue;
+import com.skllstorm.perrine.profits.writer.QueueItemWriter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -16,7 +19,6 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.data.MongoItemReader;
 import org.springframework.batch.item.data.MongoItemWriter;
 import org.springframework.batch.item.data.MongoPagingItemReader;
 import org.springframework.batch.item.data.builder.MongoItemWriterBuilder;
@@ -52,6 +54,9 @@ import java.util.stream.IntStream;
 public class BatchConfig {
     @Autowired
     private MongoTemplate template;
+
+    @Autowired
+    private ItemQueue itemQueue;
 
 
     @Bean
@@ -111,7 +116,7 @@ public class BatchConfig {
 
     @Bean
     public MongoPagingItemReader<Employee> readFromMongo() {
-        log.info("READING STEP 2");
+        log.info("READING Step2");
 
         Query query = new Query();
         query.addCriteria(Criteria.where("lastName").regex("^[A-Pa-p][a-zA-Z]*$"));
@@ -124,7 +129,6 @@ public class BatchConfig {
                 .template(template)
                 .collection("employees")
                 .query(query)
-//                .jsonQuery("{}")
                 .targetType(Employee.class)
                 .sorts(sortMap)
                 .build();
@@ -137,8 +141,39 @@ public class BatchConfig {
     }
 
     @Bean
+    public ItemWriter<EmployeePayment> writeToQueue() {
+        log.info("WRITING PAYMENTS");
+        return new QueueItemWriter<EmployeePayment>();
+    }
+
+
+
+    @Bean
+    public Step step2(JobRepository jobRepository,
+                      PlatformTransactionManager transactionManager
+    ) {
+        log.info("STARTING Step2");
+        return new StepBuilder("step2", jobRepository)
+                .<Employee, EmployeePayment>chunk(10, transactionManager)
+                .reader(readFromMongo())
+                .processor(paymentProcessor())
+                .writer(writeToQueue())
+                .faultTolerant()
+                .skipLimit(10)
+                .skip(FlatFileParseException.class)
+                .listener(new EmployeeToDbSkipListener("fastep3.psv"))
+                .build();
+    }
+
+    @Bean
+    public ItemReader<EmployeePayment> readFromQueue() {
+        log.info("Reading Step3");
+        return new QueueItemReader<EmployeePayment>();
+    }
+
+    @Bean
     public FlatFileItemWriter<EmployeePayment> writeToCsv() {
-        log.info("Writing STEP 2");
+        log.info("Writing Step3");
 
         return new FlatFileItemWriterBuilder<EmployeePayment>()
                 .name("writeToCsv")
@@ -149,28 +184,21 @@ public class BatchConfig {
     }
 
     @Bean
-    public Step step2(JobRepository jobRepository,
-                      PlatformTransactionManager transactionManager
-    ) {
-        log.info("STARTING STEP 2");
-        return new StepBuilder("step2", jobRepository)
-                .<Employee, EmployeePayment>chunk(10, transactionManager)
-                .reader(readFromMongo())
-                .processor(paymentProcessor())
+    public Step step3(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+        return new StepBuilder("step3", jobRepository)
+                .<EmployeePayment, EmployeePayment>chunk(10, transactionManager)
+                .reader(readFromQueue())
                 .writer(writeToCsv())
-                .faultTolerant()
-                .skipLimit(10)
-                .skip(FlatFileParseException.class)
-                .listener(new EmployeeToDbSkipListener("failed2.psv"))
                 .build();
     }
 
     @Bean
-    public Job paymentJob(JobRepository jobRepository, Step step1, Step step2) {
+    public Job paymentJob(JobRepository jobRepository, Step step1, Step step2, Step step3) {
         return new JobBuilder("paymentJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
                 .start(step1)
                 .next(step2)
+                .next(step3)
                 .build();
     }
 
