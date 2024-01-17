@@ -12,7 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.job.builder.FlowBuilder;
 import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.job.flow.Flow;
+import org.springframework.batch.core.job.flow.support.SimpleFlow;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -36,17 +39,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.jdbc.support.JdbcTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionManager;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 @EnableBatchProcessing
 @Slf4j
@@ -158,6 +159,7 @@ public class BatchConfig {
                 .reader(readFromMongo())
                 .processor(paymentProcessor())
                 .writer(writeToQueue())
+                .taskExecutor(new SimpleAsyncTaskExecutor("step_thread"))
                 .faultTolerant()
                 .skipLimit(10)
                 .skip(FlatFileParseException.class)
@@ -193,12 +195,35 @@ public class BatchConfig {
     }
 
     @Bean
-    public Job paymentJob(JobRepository jobRepository, Step step1, Step step2, Step step3) {
+    public SimpleFlow flow1(Step step1) {
+        return new FlowBuilder<SimpleFlow>("flow1")
+                .start(step1)
+                .build();
+    }
+
+    @Bean
+    public Flow flow2(Step step2) {
+        return new FlowBuilder<Flow>("flow2")
+                .start(step2)
+                .build();
+    }
+
+    @Bean
+    public Flow flow3(Step step3) {
+        return new FlowBuilder<Flow>("flow3")
+                .start(step3)
+                .build();
+    }
+
+    @Bean
+    public Job paymentJob(JobRepository jobRepository, Flow flow1, Flow flow2, Flow flow3) {
         return new JobBuilder("paymentJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
-                .start(step1)
-                .next(step2)
-                .next(step3)
+                .start(flow1)
+                .split(new SimpleAsyncTaskExecutor("splitFlowThread"))
+                .add(flow2)
+                .next(flow3)
+                .end()
                 .build();
     }
 
